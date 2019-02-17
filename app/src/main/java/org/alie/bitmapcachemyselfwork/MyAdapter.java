@@ -65,7 +65,8 @@ public class MyAdapter extends BaseAdapter {
         // 第二次优化：
         /**
          * 1.先从内存缓存中获取bitmap
-         * 2.如果内存缓存中没有，则再从复用翅中获取允许被复用的图片，使用复用的bitmap去加载新的bitmap
+         * 2.如果内存缓存中没有，则再从复用翅中获取允许被复用的图片，使用复用的bitmap去加载获取图片磁盘缓存的图片
+         * 3.如果磁盘缓存中没有，则使用复用池中允许被复用的图片去加载获取图片
          */
         //1.先从内存中获取bitmap
         bitmap = ImageCache.getInstance().getBitmapFromMemoryCache(String.valueOf(position));
